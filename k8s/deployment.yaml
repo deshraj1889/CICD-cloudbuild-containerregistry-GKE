@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: nodeapp
-  name: nodeapp
+    run: $_APP_NAME
+  name: $_APP_NAME
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: nodeapp
+      run: $_APP_NAME
   template:
     metadata:
       labels:
-        run: nodeapp
+        run: $_APP_NAME
     spec:
       containers:
-      - image: gcr.io/<google-project-id>/nodeapp:latest
-        name: nodeapp
+      - image: gcr.io/<google-project-id>/$_APP_NAME:latest
+        name: $_APP_NAME
         ports:
         - containerPort: <container-port>
