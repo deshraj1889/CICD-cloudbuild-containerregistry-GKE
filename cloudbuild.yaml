@@ -11,7 +11,7 @@ steps:
   args: [
    'build', 
    '-t', 
-   'gcr.io/$_PROJECT_ID/nodeapp:$TAG_NAME',
+   'gcr.io/$_PROJECT_ID/nodeapp:$_BRANCH_NAME',
    '-t', 
    'gcr.io/$_PROJECT_ID/nodeapp:latest',
    '.'
@@ -29,13 +29,13 @@ steps:
    'image', 
    'deployment', 
    'nodeapp', 
-   'nodeapp=gcr.io/$_PROJECT_ID/nodeapp:$TAG_NAME'
+   'nodeapp=gcr.io/$_PROJECT_ID/nodeapp:$_BRANCH_NAME'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=<cluster-zone>'
   - 'CLOUDSDK_CONTAINER_CLUSTER=<cluster-name>'
 # push images to Google Container Registry with tags
 images: [
-   'gcr.io/$_PROJECT_ID/nodeapp:$TAG_NAME',
+   'gcr.io/$_PROJECT_ID/nodeapp:$_BRANCH_NAME',
    'gcr.io/$_PROJECT_ID/nodeapp:latest'
   ]
