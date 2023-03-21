@@ -4,16 +4,16 @@ steps:
   entrypoint: 'bash'
   args: [
    '-c', 
-   'docker pull gcr.io/$_PROJECT_ID/<app-name>:latest || exit 0'
+   'docker pull gcr.io/$_PROJECT_ID/nodeapp:latest || exit 0'
   ]
 #step 2
 - name: gcr.io/cloud-builders/docker
   args: [
    'build', 
    '-t', 
-   'gcr.io/$_PROJECT_ID/<app-name>:$TAG_NAME',
+   'gcr.io/$_PROJECT_ID/nodeapp:$TAG_NAME',
    '-t', 
-   'gcr.io/$_PROJECT_ID/<app-name>:latest',
+   'gcr.io/$_PROJECT_ID/nodeapp:latest',
    '.'
   ]
 #step 3
@@ -28,14 +28,14 @@ steps:
    'set', 
    'image', 
    'deployment', 
-   '<app-name>', 
-   '<app-name>=gcr.io/$_PROJECT_ID/<app-name>:$TAG_NAME'
+   'nodeapp', 
+   'nodeapp=gcr.io/$_PROJECT_ID/nodeapp:$TAG_NAME'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=<cluster-zone>'
   - 'CLOUDSDK_CONTAINER_CLUSTER=<cluster-name>'
 # push images to Google Container Registry with tags
 images: [
-   'gcr.io/$PROJECT_ID/<app-name>:$TAG_NAME',
-   'gcr.io/$PROJECT_ID/<app-name>:latest'
+   'gcr.io/$_PROJECT_ID/nodeapp:$TAG_NAME',
+   'gcr.io/$_PROJECT_ID/nodeapp:latest'
   ]
