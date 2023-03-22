@@ -4,7 +4,7 @@ steps:
   args: ['build', '-t', 'global-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/my-image', '.']
 
 #step 2 push Image
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'us.gcr.io/cloud-builders/docker'
   args: [ 'push', 'global-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/my-image']
 
 
