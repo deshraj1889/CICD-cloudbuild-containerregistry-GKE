@@ -1,5 +1,3 @@
-# Official docker image.
-image: docker:latest
-
-services:
-  - docker:dind
+FROM alpine
+COPY quickstart.sh /
+CMD ["/quickstart.sh"]
