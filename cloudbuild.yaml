@@ -1,7 +1,7 @@
 #step 1
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:${SHORT_SHA}', '.' ]
+  args: ['build', '-t', 'global-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/my-image', '.']
 
 #step 2 push
 - name: 'gcr.io/cloud-builders/docker'
