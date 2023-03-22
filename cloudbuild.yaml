@@ -6,7 +6,7 @@ steps:
    '-c', 
    'docker pull gcr.io/$_PROJECT_ID/$_APP_NAME:latest || exit 0'
   ]
-logsBucket: 'gs://desu-project/GCP-trigger-files/'
+logsBucket: 'gs://logs-docker-project'
 serviceAccount: 'projects/$_PROJECT_ID/serviceAccounts/$_SERVICE_EMAIL'
 options:
   logging: GCS_ONLY
