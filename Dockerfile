@@ -1,2 +1,2 @@
 docker build t myapp:latest 
-gcloud builds submit --region=us-west2 --config cloudbuild.yaml
+gcloud builds submit --region=global --config cloudbuild.yaml
