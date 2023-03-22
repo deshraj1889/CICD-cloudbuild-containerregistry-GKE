@@ -7,7 +7,7 @@ images:
 
 #step 2 push
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'gcr.io/$_PROJECT_ID/$_SERVICE_EMAIL:$_SHORT_SHA']
+  args: [ 'push', 'gcr.io/$_PROJECT_ID/$_SERVICE_EMAIL:${SHORT_SHA}']
   
 logsBucket: 'gs://logs-docker-project'
 serviceAccount: 'projects/$_PROJECT_ID/serviceAccounts/$_SERVICE_EMAIL'
