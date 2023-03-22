@@ -1,11 +1,11 @@
 #step 1
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'global-docker.pkg.dev/$_PROJECT_ID/cicd-cloudbuild-containerregistry-gke/project-image', '.']
+  args: ['build', '-t', 'global-docker.pkg.dev/$_PROJECT_ID/myrepo/project-image', '.']
 
 #step 2 push Image
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'global-docker.pkg.dev/$_PROJECT_ID/cicd-cloudbuild-containerregistry-gke/project-image']
+  args: [ 'push', 'global-docker.pkg.dev/$_PROJECT_ID/myrepo/project-image']
 
 
 logsBucket: 'gs://logs-docker-project'
