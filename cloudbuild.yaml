@@ -8,8 +8,7 @@ steps:
 #   args: [ 'push', 'global-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/my-image']
 # Docker Push
  - name: 'gcr.io/cloud-builders/docker'
-   args: ['push', 
-           'global-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/myimage']
+   args: ['push', 'global-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/my-image']
 
   
 logsBucket: 'gs://logs-docker-project'
