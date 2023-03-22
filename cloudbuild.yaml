@@ -8,9 +8,9 @@ steps:
   args: [ 'push', 'global-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/my-image']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
-  args: ['compute', 'instances', 'create-with-container', 'instance-1', '--container-image', 'us-central1-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/my-image']
+  args: ['compute', 'create-with-container', 'instance-1', '--container-image', 'global-docker.pkg.dev/$_PROJECT_ID/my-docker-repo/my-image']
   env:
-  - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+  - 'CLOUDSDK_COMPUTE_REGION=global'
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   
 logsBucket: 'gs://logs-docker-project'
