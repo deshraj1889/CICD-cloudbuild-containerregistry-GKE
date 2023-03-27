@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: $_APP_NAME
+  name: nodeapp
 spec:
   selector:
-     run: $_APP_NAME
+     run: nodeapp
   ports:
   - protocol: TCP
     port: 80
