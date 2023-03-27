@@ -34,7 +34,6 @@ images: [
    'gcr.io/$_PROJECT_ID/$_APP_NAME:latest'
   ]
 
-
 logsBucket: 'gs://logs-docker-project'
 serviceAccount: 'projects/$_PROJECT_ID/serviceAccounts/$_SERVICE_EMAIL'
 options:
