@@ -16,6 +16,23 @@ steps:
    'gcr.io/$_PROJECT_ID/$_APP_NAME:latest',
    '.'
   ]
+#step 3
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: [
+   'set', 
+   'image', 
+   'deployment', 
+   '$_APP_NAME', 
+   '$_APP_NAME=gcr.io/$_PROJECT_ID/$_APP_NAME:$_BRANCH_NAME'
+  ]
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=$_CLUSTER_ZONE'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER_NAME'
+# push images to Google Container Registry with tags
+images: [
+   'gcr.io/$_PROJECT_ID/$_APP_NAME:$_BRANCH_NAME',
+   'gcr.io/$_PROJECT_ID/$_APP_NAME:latest'
+  ]
 
 
 logsBucket: 'gs://logs-docker-project'
