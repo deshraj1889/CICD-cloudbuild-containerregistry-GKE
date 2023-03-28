@@ -26,3 +26,4 @@ spec:
             limits:
               memory: "1G"
               cpu: "500m"
+         args: ["-c", "while true; do echo hello; sleep 10;done"]
