@@ -6,7 +6,8 @@ spec:
   selector:
      run: nodeapp
   ports:
-  - protocol: TCP
+  - name: https
+    protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 8090
   type: LoadBalancer
