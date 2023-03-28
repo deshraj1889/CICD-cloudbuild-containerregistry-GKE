@@ -8,5 +8,5 @@ RUN apt-get install tree -y
 COPY app.py .
 RUN python app.py
 #ENV CI=true
-EXPOSE 8080
+EXPOSE 8080/tcp
 
