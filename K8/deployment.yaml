@@ -31,4 +31,4 @@ spec:
               cpu: 100m
           command: ["/bin/sh"]
           args: ["-c", "while true; do echo hello; sleep 10;done"]
-        dnsPolicy: ClusterFirst
+#         dnsPolicy: ClusterFirst
