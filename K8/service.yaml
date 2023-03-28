@@ -10,7 +10,4 @@ spec:
     port: 80
     targetPort: 80
   type: LoadBalancer
-  initialDelaySeconds: 150
-  periodSeconds: 5
-  timeoutSeconds: 5
-  failureThreshold: 10
+
