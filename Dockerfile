@@ -7,6 +7,6 @@ RUN apt-get install python3-pip -y
 RUN apt-get install tree -y
 COPY app.py .
 RUN python app.py
-#ENV CI=true
+ENV CI=true
 EXPOSE 8080/tcp
 
