@@ -18,7 +18,7 @@ spec:
       - image: gcr.io/docker-project-381316/nodeapp:latest
         name: nodeapp
         ports:
-          - containerPort: 8080
+          - containerPort: 9080
         resources:
           requests:
             cpu: 100m
