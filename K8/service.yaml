@@ -2,9 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   name: nodeapp
-spec: 
+spec:
+  selector:
+     app: nodeapp
   ports:
-  - port: 8080
+  - protocol: TCP
+    port: 8080
     targetPort: 8080
-    protocol: TCP
   type: LoadBalancer
