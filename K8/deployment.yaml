@@ -48,7 +48,9 @@ spec:
         - containerPort: 3000
         imagePullPolicy: Always
         resources:
-          requests:
-            memory: "100MiB"
           limits:
-            memory: "200MiB"
+            cpu: 10
+            memory: 4Gi
+          requests:
+            cpu: 5
+        memory: 3Gi
