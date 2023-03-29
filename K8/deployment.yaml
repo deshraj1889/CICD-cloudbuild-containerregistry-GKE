@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: nodeapp
+      app: "nodeapp"
   replicas: 1
   template:
     metadata:
       labels:
-        app: nodeapp
+        app: "nodeapp"
     spec:
       containers:
       - name: nodeapp
