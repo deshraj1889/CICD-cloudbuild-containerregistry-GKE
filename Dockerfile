@@ -9,4 +9,6 @@ COPY app.py .
 RUN python app.py
 ENV CI=true
 EXPOSE 8080
+ENTRYPOINT [“python3”]
+CMD [“app.py” ]
 
