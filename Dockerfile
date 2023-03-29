@@ -5,6 +5,8 @@ RUN apt-get install python2-minimal -y
 RUN apt-get install python-is-python3 -y
 RUN apt-get install python3-pip -y
 RUN apt-get install tree -y
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 COPY app.py .
 RUN python app.py
 ENV CI=true
