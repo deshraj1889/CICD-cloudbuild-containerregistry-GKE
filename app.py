@@ -1,5 +1,5 @@
-from flask import Flask
-app = Flask(__name__)
-@app.route("/")
-def index():
-    return "Congratulations, it's a web app!"
+print("This is My Python Project")
+def myFun(m1,m2):
+	print("sum is ",(m1+m2))
+print("By By Python")
+myFun(12, 10)

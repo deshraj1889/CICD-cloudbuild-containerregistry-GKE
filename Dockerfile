@@ -1,15 +1,5 @@
-FROM ubuntu
-WORKDIR /app
-RUN apt-get update -y
-RUN apt-get install python2-minimal -y
-RUN apt-get install python-is-python3 -y
-RUN apt-get install python3-pip -y
-RUN apt-get install tree -y
-COPY requirements.txt .
-RUN python --version
-RUN pip install -r requirements.txt
-COPY app.py .
-RUN python app.py
-ENV CI=true
-EXPOSE 8080
+FROM python
+WORKDIR /user/src/myapp
+COPY . /user/src/myapp
 
+CMD ["python3", "app.py"]
