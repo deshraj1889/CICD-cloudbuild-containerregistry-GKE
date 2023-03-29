@@ -28,16 +28,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    run: nodeapp
   name: nodeapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      run: nodeapp
   template:
     metadata:
       labels:
-        app: nodeapp
+       run: nodeapp
     spec:
       containers:
       - name: nodeapp
