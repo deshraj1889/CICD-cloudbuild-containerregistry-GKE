@@ -1,48 +1,19 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   labels:
-#     run: nodeapp
-#   name: nodeapp
-# spec:
-#   replicas: 3
-#   selector:
-#     matchLabels:
-#       run: nodeapp
-#   template:
-#     metadata:
-#       labels:
-#         run: nodeapp
-#     spec:
-#       containers:
-#       - image: gcr.io/docker-project-381316/nodeapp:latest
-#         name: nodeapp
-#         ports:
-#           - containerPort: 9080
-#         resources:
-#           requests:
-#             cpu: 100m
-#         command: ["/bin/sh"]
-#         args: ["-c", "while true; do echo hello; sleep 10;done"]
-#
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    run: nodeapp
   name: nodeapp
 spec:
-  replicas: 1
   selector:
     matchLabels:
       run: nodeapp
+  replicas: 2
   template:
     metadata:
       labels:
-       run: nodeapp
+        run: nodeapp
     spec:
       containers:
       - name: nodeapp
         image: gcr.io/docker-project-381316/nodeapp:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80
